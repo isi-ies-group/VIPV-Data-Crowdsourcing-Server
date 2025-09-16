@@ -1,0 +1,281 @@
+{% extends "nav.html" %}
+{% block title %}Participa{% endblock %}
+{% block head %}
+<style>
+    .provider-logo {
+        max-width: 100%;
+        max-height: 48px;
+        width: 100%;
+        object-fit: contain;
+        margin-right: 12px;
+    }
+
+    .instructions-gallery {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin: 2.5em 0 2.5em 0;
+        align-items: stretch;
+    }
+
+    .instruction-step {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.20);
+        padding: 28px 24px 20px 24px;
+        max-width: 900px;
+        width: 100%;
+        min-height: 320px;
+        max-height: 320px;
+        margin: 0 auto;
+        transition: box-shadow 0.2s;
+        gap: 32px;
+        box-sizing: border-box;
+    }
+
+    .instruction-step:hover {
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.30);
+    }
+
+    .instruction-step img {
+        width: 220px;
+        height: 220px;
+        object-fit: contain;
+        border-radius: 12px;
+        background: #f6f6f6;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+
+    .step-caption {
+        text-align: left;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .step-caption strong {
+        display: block;
+        margin-bottom: 8px;
+        color: #2c3e50;
+        font-size: 1.18em;
+    }
+
+    .section-title {
+        width: 100%;
+        margin: 32px 0 8px 0;
+    }
+
+    .section-title h3 {
+        margin-bottom: 0.5em;
+    }
+
+    .step-caption p {
+        margin: 0 0 8px 0;
+        font-size: 1.08em;
+        color: #444;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    @media (max-width: 900px) {
+        .instruction-step {
+            flex-direction: column;
+            align-items: center;
+            max-width: 98vw;
+            width: 100%;
+            padding: 16px 8px 12px 8px;
+            gap: 16px;
+            /* Remove fixed heights for mobile */
+            min-height: unset;
+            max-height: unset;
+        }
+
+        .instruction-step img {
+            width: 140px;
+            height: 140px;
+        }
+
+        .step-caption {
+            text-align: center;
+        }
+    }
+</style>
+{% endblock %}
+{% block content %}
+<header class="major">
+    <h1>Participa</h1>
+    <p></p>
+</header>
+
+<div id="main">
+    <section id="instructions-before" class="main">
+        <header class="major special">
+            <h2>Antes de empezar</h2>
+        </header>
+        <div class="content">
+            <h3>Balizas</h3>
+            <p>Te facilitaremos los sensores de irradiancia Bluetooth durante un tiempo limitado, por ejemplo, dos semanas. Puedes pedirla en
+                alguno de los siguiente puntos:
+            </p>
+            <ul>
+                <li>ETSIDI (Embajadores, Madrid) - Busca a Pablo Quesada, nuestro colaborador por excelencia,
+                    normalmente en los laboratorios de electrónica de la planta 0. ¿No sabes quién es? Pregunta, todo el
+                    personal y la mitad del alumnado lo sabe.</li>
+                <li>O previo contacto directo con nuestro equipo del Instituto de Energía Solar: <a href="/about#contact-us">ver contacto</a>.</li>
+            </ul>
+
+            <p>Una <i>baliza</i> se ve tal que así:</p>
+            <img src="{{ url_for('static', filename='images/beacon.png') }}" alt="Foto de una baliza" width="200"/>
+            <p>Este sensor emite siempre su identificador único y un valor de lectura de la irradiancia. El móvil, con su sensor de Bluetooth Low-Energy recoge esta información y la procesa, añade otra información de sus sensores (como la geolocalización) y, cuando la sesión termina, se guarda en un fichero.</p>
+
+            <h3>Cuenta de usuario</h3>
+            <p>Debes crearte una cuenta de usuario, bien sea desde la web o cuando instales la aplicación.</p>
+            <p>Para crear la cuenta, puedes acceder a <a href="/signup">Regístrate</a></p>
+
+            <h3>Descarga e instala la app, <strong>surCO</strong></h3>
+            <!-- Descarga la app section -->
+            <div class="card-grid" style="text-align: center;">
+                <div class="card-grid-card">
+                    <a href="https://play.google.com/store/apps/details?id=es.upm.ies.surco" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                            alt="Google Play" class="provider-logo">
+                        <h3>En Google Play</h3>
+                    </a>
+                </div>
+                <div class="card-grid-card">
+                    <a href="obtainium://add/https://github.com/isi-ies-group/VIPV-surCO-Client" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="https://raw.githubusercontent.com/ImranR98/Obtainium/main/assets/graphics/badge_obtainium.png"
+                            alt="Obtainium" class="provider-logo">
+                        <h3>Con Obtainium</h3>
+                    </a>
+                </div>
+                <div class="card-grid-card">
+                    <a href="https://github.com/isi-ies-group/VIPV-surCO-Client/releases" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+                            alt="GitHub" class="provider-logo">
+                        <h3>Desde GitHub</h3>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Application how to use -->
+    <section id="instructions-app" class="main">
+        <header class="major special instructions-gallery">
+            <h2>Toma medidas</h2>
+
+            <!-- Sección 0: Registro e inicio de sesión -->
+            <div class="instruction-step">
+                <div class="step-caption">
+                    <strong>0. Regístrate e inicia sesión en la app</strong>
+                    <p>Crea una cuenta o inicia sesión con tus credenciales. Puedes acceder desde el menú
+                        navegación.
+                    </p>
+                </div>
+                <img src="{{ url_for('static', filename='images/app-instructions/00_Login_or_Register.png') }}"
+                    alt="Registro e inicio de sesión">
+            </div>
+
+            <!-- Sección: Uso básico de la app (pasos 1 a 5) -->
+            <div class="section-title">
+                <h3>Uso básico de la aplicación</h3>
+            </div>
+            <div class="instruction-step">
+                <div class="step-caption">
+                    <strong>1. Coloca los sensores</strong>
+                    <p>Pon los sensores en las superficies del vehículo donde quieras medir.</p>
+                </div>
+                <img src="{{ url_for('static', filename='images/app-instructions/10_put_sensors_on_car.png') }}"
+                    alt="Coloca los sensores">
+            </div>
+            <div class="instruction-step">
+                <div class="step-caption">
+                    <strong>2. Inicia la sesión de medida</strong>
+                    <p>Presiona el botón para <b>Iniciar sesión</b> que se encuentra en la parte inferior.</p>
+                </div>
+                <img src="{{ url_for('static', filename='images/app-instructions/21_start_session.png') }}"
+                    alt="Inicia la sesión">
+            </div>
+            <div class="instruction-step">
+                <div class="step-caption">
+                    <strong>3. Configura cada baliza</strong>
+                    <p>Haz clic en cada baliza para editar sus datos.</p>
+                </div>
+                <img src="{{ url_for('static', filename='images/app-instructions/30_click_beacon_config.png') }}"
+                    alt="Configura balizas">
+            </div>
+            <div class="instruction-step">
+                <div class="step-caption">
+                    <strong>4. Indica la ubicación de la baliza</strong>
+                    <p>Es obligatorio aportar la superficie sobre la que está la baliza y su inclinación.</p>
+                    <p>La inclinación la puedes medir apoyando el móvil sobre la baliza y presionando el botón
+                        <b>Medir</b>.
+                    </p>
+                </div>
+                <img src="{{ url_for('static', filename='images/app-instructions/40_beacon_fields_config.png') }}"
+                    alt="Rellena campos baliza">
+            </div>
+            <div class="instruction-step">
+                <div class="step-caption">
+                    <strong>5. Finaliza la sesión</strong>
+                    <p>Cuando hayas finalizado el recorrido, finaliza la sesión.</p>
+                </div>
+                <img src="{{ url_for('static', filename='images/app-instructions/51_stop_session.png') }}"
+                    alt="Finaliza la sesión">
+            </div>
+
+            <!-- Sección: gestión y subida manual -->
+            <div class="section-title">
+                <h3>Gestión y subida manual de sesiones</h3>
+            </div>
+            <div class="instruction-step">
+                <div class="step-caption">
+                    <strong>6. Sube tus sesiones manualmente</strong>
+                    <p>Desde la pantalla principal puedes pulsar el botón inferior derecho para enviar
+                        manualmente las sesiones almacenadas al servidor (si has iniciado sesión). Por defecto,
+                        las sesiones se suben automáticamente, así que este paso es opcional.</p>
+                </div>
+                <img src="{{ url_for('static', filename='images/app-instructions/64_Upload_from_home.png') }}"
+                    alt="Subir sesiones manualmente">
+            </div>
+            <div class="instruction-step">
+                <div class="step-caption">
+                    <strong>7. Gestiona tus sesiones</strong>
+                    <p>Pulsa el botón inferior izquierdo para acceder al listado de sesiones guardadas en
+                        el dispositivo. Desde ahí puedes compartir o eliminar sesiones que aún no se hayan
+                        subido al servidor.</p>
+                </div>
+                <img src="{{ url_for('static', filename='images/app-instructions/66_Manage_sessions.png') }}"
+                    alt="Gestionar sesiones">
+            </div>
+        </header>
+    </section>
+
+    <!-- Consulta web -->
+    <section id="instructions-web" class="main">
+        <header class="major special instructions-gallery">
+            <h2>Consulta tus datos</h2>
+        </header>
+        <div class="content">
+            <p>En esta web puedes consultar tus sesiones de medida y descargarlas.</p>
+            <p>¡Solo tienes que iniciar sesión y ahí tendrás toda la información a mano para ti!</p>
+            <p>Recuerda que este software está publicado y es de código abierto, por si quieres usar nuestra
+                herramienta de lectura de ficheros de sesiones. <a href="/about#source-code">Ver repositorios</a>.
+            </p>
+        </div>
+    </section>
+</div>
+{% endblock %}

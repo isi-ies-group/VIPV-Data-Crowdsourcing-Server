@@ -49,12 +49,44 @@
     border-radius: 5px;
     transition: 0.2s ease left, width 0.2s cubic-bezier(.4, 0, .2, 1);
   }
+
+  #participa-navbutton {
+    background: linear-gradient(135deg, #ff8a00, #e52e71);
+    color: white !important;
+    font-weight: bold;
+    border-radius: 6px;
+    margin: 0 5px;
+    box-shadow: 0 4px 15px 0 rgba(229, 46, 113, 0.5);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  #participa-navbutton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px 0 rgba(229, 46, 113, 0.7);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 6px 20px 0 rgba(229, 46, 113, 0.7);
+    }
+
+    50% {
+      box-shadow: 0 6px 30px 5px rgba(229, 46, 113, 0.9);
+    }
+
+    100% {
+      box-shadow: 0 6px 20px 0 rgba(229, 46, 113, 0.7);
+    }
+  }
 </style>
 <header id="header">
   <nav id="navGlobal">
     <a href="/">Inicio</a>
     <a href="/about">Iniciativa</a>
-    <a href="/contact">Contáctanos</a>
+    <a id="participa-navbutton" href="/get-involved">Participa</a>
     <a id="loginButton" href="/login">Iniciar Sesión</a>
     <div id="indicator"></div>
   </nav>

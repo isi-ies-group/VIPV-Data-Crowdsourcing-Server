@@ -7,11 +7,13 @@
         margin: 10px 0;
         display: block;
     }
+
     .person-icon {
         font-size: 2em;
         color: #3498db;
         margin-bottom: 10px;
     }
+
     .org-icon {
         font-size: 2em;
         color: #e74c3c;
@@ -32,19 +34,17 @@
         <header class="major special">
             <h2>¿Qué es {{ app_name_long }}?</h2>
         </header>
-        <div>
-            <div class="content">
-                <p>{{ app_name }} es una iniciativa de ciencia ciudadana para la evaluación de la energía solar como una
-                    fuente alternativa para los vehículos. Sensores de irradiancia solar y la adquisición de sus datos a
-                    través de esta app nos ayudarán a determinar la producción energética de módulos fotovoltaicos
-                    integrados en vehículos, en el caso específico de las rutas realizadas por los usuarios.</p>
-                <p>Los participantes en el programa pueden contribuir a la generación de conocimiento científico sobre
-                    la eficiencia y la viabilidad de la energía solar en vehículos, así como a la promoción de prácticas
-                    sostenibles en el uso de la energía.</p>
-                <ul class="actions">
-                    <li><a href="/contact" class="button">Contáctanos</a></li>
-                </ul>
-            </div>
+        <div class="content">
+            <p>{{ app_name }} es una iniciativa de ciencia ciudadana para la evaluación de la energía solar como una
+                fuente alternativa para los vehículos. Sensores de irradiancia solar y la adquisición de sus datos a
+                través de esta app nos ayudarán a determinar la producción energética de módulos fotovoltaicos
+                integrados en vehículos, en el caso específico de las rutas realizadas por los usuarios.</p>
+            <p>Los participantes en el programa pueden contribuir a la generación de conocimiento científico sobre
+                la eficiencia y la viabilidad de la energía solar en vehículos, así como a la promoción de prácticas
+                sostenibles en el uso de la energía.</p>
+            <ul class="actions">
+                <li><a href="#contact-us" class="button">Contáctanos</a></li>
+            </ul>
         </div>
     </section>
 
@@ -72,12 +72,19 @@
         <header class="major special">
             <h3>Organizaciones</h3>
         </header>
-        <div class="card-grid">
+        <div class="card-grid" style="text-align: left;">
             <div class="card-grid-card">
                 <a href="https://blogs.upm.es/crea/" target="_blank" rel="noopener noreferrer">
                     <img src="/static/images/orgs-colabs/logo_crea_fondo_letras.png" alt="Logo CREA" class="org-logo">
                     <h3>Club de Robótica, Electrónica y Automática</h3>
                     <p>ETSIDI, UPM</p>
+                </a>
+            </div>
+            <div class="card-grid-card">
+                <a href="https://www.emtmadrid.es" target="_blank" rel="noopener noreferrer">
+                    <img src="/static/images/orgs-colabs/Logo-EMT.jpg" alt="Logo CREA" class="org-logo">
+                    <h3>Empresa Municipal de Transportes de Madrid, EMT</h3>
+                    <p>Madrid, Madrid</p>
                 </a>
             </div>
         </div>
@@ -93,6 +100,41 @@
                 <li><a href="/privacy-policy?lang=es">Política de privacidad [español]</a></li>
                 <li><a href="/privacy-policy?lang=en">Política de privacidad [inglés]</a></li>
             </ul>
+        </div>
+    </section>
+
+    <section id="source-code" class="main">
+        <header class="major special">
+            <h2>Enlaces al código fuente de nuestro software</h2>
+        </header>
+        <div class="content">
+            <h3>Repositorios en GitHub</h3>
+            <p>Si has encontrado un bug o quieres sugerir algún cambio en alguno de nuestro software, puedes hacerlo
+                a través de los siguientes enlaces:</p>
+            <ul>
+                <li><a href="https://github.com/isi-ies-group/VIPV-surCO-Client" target="_blank">Repositorio del
+                        cliente</a></li>
+                <li><a href="https://github.com/isi-ies-group/VIPV-surCO-Server" target="_blank">Repositorio del
+                        servidor</a></li>
+                <li><a href="https://github.com/isi-ies-group/VIPV-surCO-Reader" target="_blank">Repositorio del
+                        lector de sesiones</a></li>
+                <li><a href="https://github.com/isi-ies-group/surCO-Solar-Urban-Recource-Collaboration"
+                        target="_blank">Repositorio de referencia bibliográfica</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact-us" class="main">
+        <header class="major special">
+            <h2>Contáctanos directamente</h2>
+        </header>
+        <div class="content">
+            <p>Si tienes alguna otra duda o sugerencia, puedes contactarnos a través del siguiente correo
+                electrónico:</p>
+            <p><a
+                    href="mailto:ies+apps+surco@upm.es?subject=Contacto%20programa%20de%20adquisición%20VIPV">ies+apps+surco@upm.es</a>
+            </p>
+            <p>¡Deseamos escucharte!</p>
         </div>
     </section>
 </div>

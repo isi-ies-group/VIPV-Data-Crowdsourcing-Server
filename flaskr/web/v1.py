@@ -240,12 +240,12 @@ def about():
     return render_template("about.html")
 
 
-@web_bp.route("/contact", methods=["GET"])
-def contact():
+@web_bp.route("/get-involved", methods=["GET"])
+def get_involved():
     """
-    Contact page
+    Get involved page
     """
-    return render_template("contact.html")
+    return render_template("get-involved.html")
 
 
 @web_bp.route("/privacy-policy", methods=["GET"])

@@ -2,115 +2,7 @@
 
 {% block title %}Inicio{% endblock %}
 
-{% block head %}
-<style>
-	.provider-logo {
-		max-width: 100%;
-		max-height: 48px;
-		width: 100%;
-		object-fit: contain;
-		margin-right: 12px;
-	}
-
-	.instructions-gallery {
-		display: flex;
-		flex-direction: column;
-		gap: 40px;
-		margin: 2.5em 0 2.5em 0;
-		align-items: stretch;
-	}
-
-	.instruction-step {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		background: #fff;
-		border-radius: 16px;
-		box-shadow: 0 6px 20px rgba(0, 0, 0, 0.20);
-		padding: 28px 24px 20px 24px;
-		max-width: 900px;
-		width: 100%;
-		min-height: 320px;
-		max-height: 320px;
-		margin: 0 auto;
-		transition: box-shadow 0.2s;
-		gap: 32px;
-		box-sizing: border-box;
-	}
-
-	.instruction-step:hover {
-		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.30);
-	}
-
-	.instruction-step img {
-		width: 220px;
-		height: 220px;
-		object-fit: contain;
-		border-radius: 12px;
-		background: #f6f6f6;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-		margin-bottom: 0;
-		flex-shrink: 0;
-	}
-
-	.step-caption {
-		text-align: left;
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		height: 100%;
-		overflow: hidden;
-	}
-
-	.step-caption strong {
-		display: block;
-		margin-bottom: 8px;
-		color: #2c3e50;
-		font-size: 1.18em;
-	}
-
-	.section-title {
-		width: 100%;
-		margin: 32px 0 8px 0;
-	}
-
-	.section-title h3 {
-		margin-bottom: 0.5em;
-	}
-
-	.step-caption p {
-		margin: 0 0 8px 0;
-		font-size: 1.08em;
-		color: #444;
-		overflow: hidden;
-		text-overflow: ellipsis;
-	}
-
-	@media (max-width: 900px) {
-		.instruction-step {
-			flex-direction: column;
-			align-items: center;
-			max-width: 98vw;
-			width: 100%;
-			padding: 16px 8px 12px 8px;
-			gap: 16px;
-			/* Remove fixed heights for mobile */
-			min-height: unset;
-			max-height: unset;
-		}
-
-		.instruction-step img {
-			width: 140px;
-			height: 140px;
-		}
-
-		.step-caption {
-			text-align: center;
-		}
-	}
-</style>
-{% endblock %}
+{% block head %}{% endblock %}
 
 {% block content %}
 
@@ -119,149 +11,24 @@
 		<header class="major special">
 			<h2>{{ app_name_long }}</h2>
 		</header>
-		<div>
-			<div class="content">
-				<p>Bienvenid@ al programa de adquisición de datos sobre el potencial del recurso fotovoltaico
-					en vehículos en zonas urbanas. Esta es una iniciativa llevada a cabo por el Instituto de
-					Energía Solar de la
-					Universidad Politécnica de Madrid. Nuestra misión es evaluar el impacto energético de
-					integrar paneles en los vehículos privados, según las rutas que haga cada usuari@.</p>
-				<div>
-					<p style="margin-bottom: 8px; text-align: left;">
-						Proyecto PID2021-128853OB-I00 financiado por:
-					</p>
-					<img src="{{ url_for('static', filename='images/funding/MICIU+Cofinanciado+AEI.jpg') }}"
-						alt="Financiado por MCIN/AEI/UE"
-						style="height: 70px; width: auto; display: block; margin-bottom: 2em;">
-				</div>
-				<ul class="actions">
-					<li><a href="login" class="button">Iniciar Sesión</a></li>
-				</ul>
+		<div class="content">
+			<p>Bienvenid@ al programa de adquisición de datos sobre el potencial del recurso fotovoltaico
+				en vehículos en zonas urbanas. Esta es una iniciativa llevada a cabo por el Instituto de
+				Energía Solar de la
+				Universidad Politécnica de Madrid. Nuestra misión es evaluar el impacto energético de
+				integrar paneles en los vehículos privados, según las rutas que haga cada usuari@.</p>
+			<div>
+				<p style="margin-bottom: 8px; text-align: left;">
+					Proyecto PID2021-128853OB-I00 financiado por:
+				</p>
+				<img src="{{ url_for('static', filename='images/funding/MICIU+Cofinanciado+AEI.jpg') }}"
+					alt="Financiado por MCIN/AEI/UE"
+					style="height: 70px; width: auto; display: block; margin-bottom: 2em;">
 			</div>
+			<ul class="actions">
+				<li><a href="login" class="button">Iniciar Sesión</a></li>
+			</ul>
 		</div>
-	</section>
-
-	<!-- First Section -->
-	<section id="first" class="main special">
-		<header class="major">
-			<h2>Colabora</h2>
-		</header>
-		<h2>Descarga e instala la app</h2>
-		<!-- Descarga la app section -->
-		<div class="card-grid">
-			<div class="card-grid-card">
-				<a href="https://play.google.com/store/apps/details?id=es.upm.ies.surco" target="_blank"
-					rel="noopener noreferrer">
-					<img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-						alt="Google Play" class="provider-logo">
-					<h3>Con Google Play</h3>
-				</a>
-			</div>
-			<div class="card-grid-card">
-				<a href="obtainium://add/https://github.com/isi-ies-group/VIPV-surCO-Client" target="_blank"
-					rel="noopener noreferrer">
-					<img src="https://raw.githubusercontent.com/ImranR98/Obtainium/main/assets/graphics/badge_obtainium.png"
-						alt="Obtainium" class="provider-logo">
-					<h3>Con Obtainium</h3>
-				</a>
-			</div>
-			<div class="card-grid-card">
-				<a href="https://github.com/isi-ies-group/VIPV-surCO-Client/releases" target="_blank"
-					rel="noopener noreferrer">
-					<img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub"
-						class="provider-logo">
-					<h3>Desde GitHub</h3>
-				</a>
-			</div>
-		</div>
-		<!-- Application how to use -->
-		<header id="instructions" class="instructions-gallery">
-			<h2>Guía de uso de la aplicación</h2>
-
-			<!-- Sección 0: Registro e inicio de sesión -->
-			<div class="instruction-step">
-				<div class="step-caption">
-					<strong>0. Regístrate e inicia sesión</strong>
-					<p>Crea una cuenta o inicia sesión con tus credenciales. Puedes acceder desde el menú navegación.
-					</p>
-				</div>
-				<img src="{{ url_for('static', filename='images/app-instructions/00_Login_or_Register.png') }}"
-					alt="Registro e inicio de sesión">
-			</div>
-
-			<!-- Sección: Uso básico de la app (pasos 1 a 5) -->
-			<div class="section-title">
-				<h3>Uso básico de la aplicación</h3>
-			</div>
-			<div class="instruction-step">
-				<div class="step-caption">
-					<strong>1. Coloca los sensores</strong>
-					<p>Pon los sensores en las superficies del vehículo donde quieras medir.</p>
-				</div>
-				<img src="{{ url_for('static', filename='images/app-instructions/10_put_sensors_on_car.png') }}"
-					alt="Coloca los sensores">
-			</div>
-			<div class="instruction-step">
-				<div class="step-caption">
-					<strong>2. Inicia la sesión</strong>
-					<p>Presiona el botón para <b>Iniciar sesión</b> que se encuentra en la parte inferior.</p>
-				</div>
-				<img src="{{ url_for('static', filename='images/app-instructions/21_start_session.png') }}"
-					alt="Inicia la sesión">
-			</div>
-			<div class="instruction-step">
-				<div class="step-caption">
-					<strong>3. Configura cada baliza</strong>
-					<p>Haz clic en cada baliza para editar sus datos.</p>
-				</div>
-				<img src="{{ url_for('static', filename='images/app-instructions/30_click_beacon_config.png') }}"
-					alt="Configura balizas">
-			</div>
-			<div class="instruction-step">
-				<div class="step-caption">
-					<strong>4. Rellena los campos</strong>
-					<p>Indica la superficie sobre la que está la baliza y su inclinación.</p>
-					<p>La inclinación la puedes medir apoyando el móvil sobre la baliza y presionando
-						<b>Medir</b>.
-					</p>
-				</div>
-				<img src="{{ url_for('static', filename='images/app-instructions/40_beacon_fields_config.png') }}"
-					alt="Rellena campos baliza">
-			</div>
-			<div class="instruction-step">
-				<div class="step-caption">
-					<strong>5. Finaliza la sesión</strong>
-					<p>Cuando hayas finalizado el recorrido, finaliza la sesión.</p>
-				</div>
-				<img src="{{ url_for('static', filename='images/app-instructions/51_stop_session.png') }}"
-					alt="Finaliza la sesión">
-			</div>
-
-			<!-- Sección: gestión y subida manual -->
-			<div class="section-title">
-				<h3>Gestión y subida manual de sesiones</h3>
-			</div>
-			<div class="instruction-step">
-				<div class="step-caption">
-					<strong>6. Sube tus sesiones manualmente</strong>
-					<p>Desde la pantalla principal puedes pulsar el botón inferior derecho para enviar
-						manualmente las sesiones almacenadas al servidor (si has iniciado sesión). Por defecto,
-						las sesiones se suben automáticamente, así que este paso es opcional.</p>
-				</div>
-				<img src="{{ url_for('static', filename='images/app-instructions/64_Upload_from_home.png') }}"
-					alt="Subir sesiones manualmente">
-			</div>
-			<div class="instruction-step">
-				<div class="step-caption">
-					<strong>7. Gestiona tus sesiones</strong>
-					<p>Pulsa el botón inferior izquierdo para acceder al listado de sesiones guardadas en
-						el dispositivo. Desde ahí puedes compartir o eliminar sesiones que aún no se hayan
-						subido al servidor.</p>
-				</div>
-				<img src="{{ url_for('static', filename='images/app-instructions/66_Manage_sessions.png') }}"
-					alt="Gestionar sesiones">
-			</div>
-		</header>
 	</section>
 
 	<section class="main special">
@@ -270,7 +37,8 @@
 				<p><strong>¡Anímate a participar y ayúdanos a avanzar en nuestra misión de integrar la energía
 						fotovoltaica!</strong></p>
 			</h3>
-			<p>Para más información, puedes ver la página de <a href="{{ url_for('web.contact') }}"><b>Contacto</b></a>
+			<p>Para más información, puedes consultar página de <a
+					href="{{ url_for('web.about') }}"><b>la iniciativa</b></a>
 			</p>
 		</footer>
 	</section>
